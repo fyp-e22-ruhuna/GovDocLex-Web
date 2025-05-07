@@ -1,9 +1,16 @@
-import React from 'react'
+
+import KeyFeatures from '@/section/KeyFeatures'
+import TrackEverything from '@/section/TrackEverything'
+import GovDocLexFeatures from '@/section/SmartExtraction'
 
 const Home = () => {
   return (
     <div>
-      hello
+      <KeyFeatures />
+      <GovDocLexFeatures />
+      <TrackEverything />
+      
+   
     </div>
   )
 }
