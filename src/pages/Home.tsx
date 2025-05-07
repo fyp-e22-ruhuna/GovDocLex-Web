@@ -1,11 +1,11 @@
-import React from 'react'
+import Hero from "@/section/home/Hero";
 
 const Home = () => {
   return (
     <div>
-      hello
+      <Hero />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
