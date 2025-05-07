@@ -6,7 +6,7 @@ const CommonLabel = ({ text }: CommonLabelProps) => {
 
   return (
     <div
-      className="z-50 bg-transparent text-transparent bg-clip-text bg-gradient-to-r from-[#41B7FC] via-[#44B5FB] to-[#46F1FA] border-[2px] rounded-lg md:rounded-3xl font-sfpro text-xs lg:text-sm w-[120px] md:w-[175px] flex items-center justify-center px-0 lg:px-2 py-2 font-semibold text-black hover:text-[#FEFFB5] hover:bg-black text-center"
+      className="md:z-50 bg-transparent text-transparent bg-clip-text bg-gradient-to-r from-[#41B7FC] via-[#44B5FB] to-[#46F1FA] border-[2px] rounded-3xl font-sfpro text-[10px] md:text-xs lg:text-sm w-[120px] md:w-[175px] flex items-center justify-center px-0 lg:px-2 py-2 font-semibold text-black hover:text-[#FEFFB5] hover:bg-black text-center"
     >
       {text}
     </div>
