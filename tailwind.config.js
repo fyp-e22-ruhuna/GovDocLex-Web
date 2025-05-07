@@ -17,6 +17,14 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sfpro: ["sfpro", "sans-serif"],
+        gilroy: ["gilroy", "sans-serif"],
+        roboto: ["roboto", "sans-serif"],
+      },
+      screens: {
+        "xsm": "500px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
