@@ -63,11 +63,11 @@ function Navbar() {
   return (
     <div
       className={`flex justify-center w-full items-center bg-[#1E1E1E] ${
-        hasScrolled ? "bg-white/5 backdrop-blur-lg shadow-md" : ""
+        hasScrolled ? "backdrop-blur-lg shadow-md" : ""
       }`}
     >
       <div
-        className={`flex items-center justify-between px-4 sm:px-8 md:px-8 lg:px-24 py-3 w-full mx-auto max-w-[1920px] transition-all duration-300 z-30 relative`}
+        className={`flex items-center justify-between px-4 sm:px-8 md:px-8 py-3 w-full mx-auto max-w-[1920px] transition-all duration-300 z-30 relative`}
       >
         <div className="flex">
           <img
