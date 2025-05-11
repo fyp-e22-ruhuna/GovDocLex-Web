@@ -1,20 +1,20 @@
-import React from 'react';
+
 import { FaCheckCircle } from 'react-icons/fa';
 import whytheseimg from "../assets/images/whytheses.png"; // replace with actual image path
 
 const FeatureHighlightSection = () => {
     return (
-        <section className="bg-[#0B0F14] py-16 px-4 text-white ">
-            <div className="max-w-[1440px] mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <section className="bg-[#0B0F14] py-16 px-4 text-white flex flex-col justify-center items-center ">
+            <div className=" mx-auto grid md:grid-cols-2 gap-10 items-center ">
                 {/* Left Content */}
-                <div className="space-y-6">
-                    <button className="bg-[#1AD3FF1A] text-[#1AD3FF] text-sm font-medium px-4 py-1.5 rounded-full">
+                <div className="space-y-6  ">
+                    <button className="bg-[#1AD3FF1A] text-[#1AD3FF] text-lg font-medium px-4 py-1.5 rounded-full">
                         Why These Matter
                     </button>
-                    <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                    <h2 className="text-4xl md:text-6xl font-bold leading-tight">
                         Track Everything, Anytime,<br />Anywhere
                     </h2>
-                    <ul className="space-y-3 text-[#B3B8C5]">
+                    <ul className="space-y-3 text-[#B3B8C5] text-lg">
                         <li className="flex items-center gap-2">
                             <FaCheckCircle className="text-[#1AD3FF]" />
                             Faster legal research
@@ -32,7 +32,7 @@ const FeatureHighlightSection = () => {
                             Future-ready system that scales with new document types
                         </li>
                     </ul>
-                    <button className="mt-6 bg-[#1AD3FF] hover:bg-[#0fcce6] text-[#0B0F14] font-semibold px-6 py-2.5 rounded-full transition duration-300">
+                    <button className="mt-6 bg-[#1AD3FF] hover:bg-[#0fcce6] text-[#0B0F14] font-bold px-6 py-2.5 rounded-full transition duration-300">
                         Explore GovDocxLen
                     </button>
                 </div>

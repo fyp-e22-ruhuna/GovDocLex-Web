@@ -44,11 +44,22 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // const handleNavClick = (id: SetStateAction<string>) => {
+  //   setActiveNavItem(id);
+  //   navigate(`/${id}`);
+  //   window.scrollTo(0, 0); // Scroll to top after navigation
+  // };
   const handleNavClick = (id: SetStateAction<string>) => {
-    setActiveNavItem(id);
-    navigate(`/${id}`);
-    window.scrollTo(0, 0); // Scroll to top after navigation
-  };
+  setActiveNavItem(id);
+
+  const section = document.getElementById(id as string);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+
+  setIsMenuOpen(false);
+};
+
 
   //   const handleCartClick = () => {
   //     navigate("/cart");

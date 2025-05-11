@@ -10,7 +10,7 @@ const Layout = () => {
       <img src={bgnav} alt="bgnav" className="hidden sm:block absolute z-0 left-1/3 w-[268px]" />
       <img src={shinball} alt="shinball" className="hidden sm:block absolute z-0 left-1/3 w-[300px]" />
       <Navbar />
-      <main className="flex-grow px-4 sm:px-8 bg-[#1E1E1E]">
+      <main className="flex-grow  bg-[#1E1E1E]">
         <Outlet />
       </main>
       <Footer />

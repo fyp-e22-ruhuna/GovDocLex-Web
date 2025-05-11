@@ -49,9 +49,9 @@ const feature = features[0];
 
 export default function GovDocLexFeatures() {
   return (
-    <div className="bg-[#0b1016]">
+    <div className="bg-[#0b1016]  flex flex-col justify-center items-center px-5">
       {" "}
-      <div className=" bg-[#0b1016] text-white font-sans px-4 py-10 grid grid-cols-1 md:grid-cols-[30%_70%]  max-w-[1440px] mx-auto  items-center">
+      <div className="  text-white font-sans px-4 py-10 grid grid-cols-1 md:grid-cols-[30%_70%] mx-auto  items-center max-w-[1920px] gap-5 ">
         {/* Feature Cards */}
         <div className=" w-full">
           {feature && (
@@ -61,9 +61,9 @@ export default function GovDocLexFeatures() {
             >
               <div className="flex items-center mb-3">
                 {feature.icon}
-                <span className="font-semibold text-lg">{feature.title}</span>
+                <span className="font-semibold text-2xl">{feature.title}</span>
               </div>
-              <div className="text-gray-300 text-sm">{feature.description}</div>
+              <div className="text-gray-300 text-lg">{feature.description}</div>
               <div className="flex justify-center  mt-4 ">
                     <img
                         src={extractimg}
@@ -78,32 +78,32 @@ export default function GovDocLexFeatures() {
 
         <div className=" h-full">
           <div className="flex flex-col md:flex-row gap-6 mb-10  w-full">
-            {features.slice(1).map((f, i) => (
+            {features.slice(1).map((f) => (
               <div
                 key={f.title}
                 className={`flex-1 rounded-2xl shadow-lg p-6 border-l-4 ${f.border} ${f.bg} `}
               >
                 <div className="flex items-center mb-3">
                   {f.icon}
-                  <span className="font-semibold text-lg">{f.title}</span>
+                  <span className="font-semibold text-2xl">{f.title}</span>
                 </div>
-                <div className="text-gray-300 text-sm">{f.description}</div>
+                <div className="text-gray-300 text-lg">{f.description}</div>
               </div>
             ))}
           </div>
           {/* Main Title */}
           <div className="mb-4">
-            <span className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-xs px-3 py-1 rounded-full mb-2">
+            <span className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-lg px-3 py-1 rounded-full mb-2">
               Our Features
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <h2 className="text-3xl md:text-6xl font-bold text-white mb-2">
               Why <span className="text-cyan-400">GovDocLex?</span> It&apos;s
               Faster, Smarter and Stronger
             </h2>
           </div>
 
           {/* Bullet Points */}
-          <div className="bg-[#101820] rounded-xl shadow-lg p-6  w-full ">
+          <div className="bg-[#101820] rounded-xl shadow-lg p-6  w-full text-lg">
             <ul className="list-disc list-inside space-y-2 text-gray-200">
               <li>
                 <span className="font-bold text-cyan-400">
