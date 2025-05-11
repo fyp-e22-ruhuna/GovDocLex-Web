@@ -17,7 +17,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path"; 
  
 export default defineConfig({ 
- 
+  base: '/GovDocLex-Web/', // <-- Add this line, replace with your repo name
   plugins: [react()], 
   resolve: { 
     alias: { 
