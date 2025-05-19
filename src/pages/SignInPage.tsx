@@ -1,7 +1,7 @@
-
 import { FaRegEyeSlash } from "react-icons/fa";
 import signin from "../assets/images/sign.jpg";
 import { FaArrowLeft } from "react-icons/fa";
+import footerbackheight from "../assets/images/footerbackheight.png";
 
 export default function SignInPage() {
   return (
@@ -11,12 +11,12 @@ export default function SignInPage() {
         <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
           {/* Logo */}
           <div className="mb-6 flex items-center gap-2 ">
-            <button className="text-2xl font-extrabold text-green-800 cursor-pointer  " 
-            onClick={() => window.location.href = "/"}
-            aria-label="Go back to home page"
+            <button
+              className="text-2xl font-extrabold text-green-800 cursor-pointer  "
+              onClick={() => (window.location.href = "/")}
+              aria-label="Go back to home page"
             >
-           
-             <FaArrowLeft  className="w-4 text-[#0a1117]"/>
+              <FaArrowLeft className="w-4 text-[#0a1117]" />
             </button>
             <span className="text-2xl font-bold text-[#0a1117]">GovDocLex</span>
           </div>
@@ -87,31 +87,35 @@ export default function SignInPage() {
               />
               Continue with Google
             </button>
-            
           </div>
         </div>
       </div>
       {/* Right: Promo and features */}
-      <div className="hidden md:flex flex-col flex-1 bg-[#0a1117] text-white justify-center px-12 py-8 relative  items-center">
-    
+      <div className="hidden md:flex flex-col flex-1 bg-[#0a1117] text-white justify-center px-12 py-8 relative  items-center ">
         {/* Promo card */}
         <div className=" rounded-xl p-6 mb-8 max-w-md  ">
-
-        <img src={signin} alt="Sign In" className="w-full h-96 object-cover rounded-xl mb-4" />
-
-       
+          <img
+            src={signin}
+            alt="Sign In"
+            className="w-full h-96 object-cover rounded-xl mb-4"
+          />
         </div>
         {/* Features */}
-        <div>
+        <div className="flex items-center justify-center flex-col text-center">
           <h3 className="text-2xl font-semibold mb-3">
-            Introducing new features
+            Welcome to the Government Document Extraction Portal
           </h3>
-          <p className="text-gray-200 max-w-md">
-            Analyzing previous trends ensures that businesses always make the
-            right decision. And as the scale of the decision and its impact
-            magnifies...
+          <p className="text-gray-200 max-w-md ">
+            This secure platform enables authorized users to upload, extract, and manage
+            critical information from official documents with speed and
+            accuracy.
           </p>
         </div>
+
+        <img src={footerbackheight} alt="Background" className="absolute bottom-0 left-0 w-full  object-cover opacity-50" /> 
+
+
+
       </div>
     </div>
   );
