@@ -12,7 +12,7 @@ const KeyFeaturesCard: React.FC<KeyFeaturesCardProps> = ({
   icon,
 }) => {
   return (
-    <div className="bg-gradient-to-tr from-cyan-900 to-blue-900  rounded-xl p-4 shadow-md text-white w-full mx-auto py-10 min-h-52 items-start flex flex-col justify-center">
+    <div className="bg-[#101820]  rounded-xl p-4 shadow-md text-white w-full mx-auto py-10 min-h-52 items-start flex flex-col justify-center">
       <div className="flex items-center mb-2 space-x-2">
         {icon &&
           (typeof icon === "string" ? (
