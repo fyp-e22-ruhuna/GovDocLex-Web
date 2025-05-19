@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import ChatbotPage from "./pages/ChatbotPage";
+import SignInPage from "./pages/SignInPage";
 
 function App() {
   return (
@@ -9,8 +10,9 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/chatbot" element={<ChatbotPage />} />
         </Route>
+        <Route path="/chatbot" element={<ChatbotPage />} />
+        <Route path="/signin" element={<SignInPage />} />
       </Routes>
     </BrowserRouter>
   );
