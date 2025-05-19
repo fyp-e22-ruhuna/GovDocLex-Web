@@ -23,6 +23,7 @@ const Home = () => {
 
       <section id="explore">
         <TrackEverything />
+     
       </section>
 
       <section id="team">
