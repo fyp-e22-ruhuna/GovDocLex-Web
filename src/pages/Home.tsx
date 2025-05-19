@@ -25,7 +25,7 @@ const Home = () => {
         <TrackEverything />
       </section>
 
-      <section id="team">
+      <section id="team" className="hidden md:block">
         <Team />
       </section>
 
