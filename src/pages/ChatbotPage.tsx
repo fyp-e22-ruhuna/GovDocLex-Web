@@ -121,7 +121,7 @@ export default function GovDocLexDashboard() {
               />
               <Button
                 variant="ghost"
-                size="icon"
+                // size="icon"
                 className="hover:bg-transparent"
               >
                 <Send size={20} />
