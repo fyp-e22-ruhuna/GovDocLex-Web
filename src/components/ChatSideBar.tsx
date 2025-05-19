@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import sidebaricon from "../assets/images/sidebaricon.png";
 
 const todayItems = [
