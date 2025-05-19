@@ -1,5 +1,10 @@
 import { useState } from "react";
-import sidebaricon from "../assets/images/sidebaricon.png";
+// import sidebaricon from "../assets/images/sidebaricon.png";
+
+type SidebarProps = {
+  sidebarOpen: boolean;
+  toggleSidebar: () => void;
+};
 
 const todayItems = [
   { label: "AI in Everyday Life?", active: false },
@@ -14,8 +19,7 @@ const previousItems = [
   "Online Business Ideas",
 ];
 
-export default function Sidebar() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+export default function Sidebar({ sidebarOpen, toggleSidebar }: SidebarProps) {
   const [showToday, setShowToday] = useState(true);
   const [showPrevious, setShowPrevious] = useState(true);
 
@@ -25,7 +29,6 @@ export default function Sidebar() {
         sidebarOpen ? "w-64" : "w-16"
       }`}
     >
-      
       <div
         className={`px-4 py-4 text-lg font-bold tracking-wide border-b border-[#23303a] transition-all duration-300 ${
           sidebarOpen ? "opacity-100" : "opacity-0 w-0 p-0 overflow-hidden"
@@ -35,7 +38,6 @@ export default function Sidebar() {
       </div>
       <div className="flex-1 flex flex-col justify-between">
         <div>
-      
           <div>
             <button
               className={`w-full text-left px-4 py-2 flex items-center justify-between focus:outline-none transition-all duration-300 ${
@@ -77,7 +79,7 @@ export default function Sidebar() {
               </div>
             )}
           </div>
-      
+
           <div className="mt-4">
             <button
               className={`w-full text-left px-4 py-2 flex items-center justify-between focus:outline-none transition-all duration-300 ${
@@ -111,20 +113,14 @@ export default function Sidebar() {
             )}
           </div>
         </div>
-    
+
         <div className="px-4 py-4 flex justify-start">
           <button
             className="w-8 h-8 flex items-center justify-center rounded  transition"
-            onClick={() => setSidebarOpen((prev) => !prev)}
+            onClick={toggleSidebar}
             aria-label={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
           >
-            <img
-              src={sidebaricon}
-              alt="Sidebar Toggle Icon"
-              className={`w-8 h-8 transition-transform duration-300 ${
-                sidebarOpen ? "" : "rotate-180"
-              }`}
-            />
+            <span className="text-xl">{sidebarOpen ? "⮜" : "⮞"}</span>
           </button>
         </div>
       </div>
