@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/GovDocLex-Web" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
         </Route>
       </Routes>

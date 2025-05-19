@@ -15,7 +15,7 @@ const KeyFeaturesSection: React.FC = () => {
         <button className="bg-[#1AD3FF1A] text-[#1AD3FF] text-lg font-medium px-4 py-1.5 rounded-full">
           Key Features
         </button>
-        <h2 className="text-6xl font-semibold  text-white mb-6 ">
+        <h2 className="text-4xl md:text-6xl font-semibold  text-white mb-6 ">
           Beyond Extraction: Smart Analysis for Legal Documents
         </h2>
 
