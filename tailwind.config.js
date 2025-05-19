@@ -19,7 +19,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sfpro: ["sfpro", "sans-serif"],
-        gilroy: ["gilroy", "sans-serif"],
+        popins: ["popins", "sans-serif"],
         roboto: ["roboto", "sans-serif"],
       },
       screens: {

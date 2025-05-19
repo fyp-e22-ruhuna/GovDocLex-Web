@@ -9,8 +9,8 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/chatbot" element={<ChatbotPage />} />
         </Route>
+        <Route path="/chatbot" element={<ChatbotPage />} />
       </Routes>
     </BrowserRouter>
   );

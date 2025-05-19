@@ -38,16 +38,22 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleNavClick = (id: SetStateAction<string>) => {
-    setActiveNavItem(id);
+ const handleNavClick = (id: SetStateAction<string>) => {
+  setActiveNavItem(id);
 
+  const clickedItem = navItems.find((item) => item.id === id);
+
+  if (clickedItem?.path && clickedItem.path !== "#") {
+    navigate(clickedItem.path);
+    setIsMenuOpen(false);
+  } else {
     const section = document.getElementById(id as string);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-
     setIsMenuOpen(false);
-  };
+  }
+};
 
   const handleLogoClick = () => {
     navigate("/");
@@ -93,8 +99,7 @@ function Navbar() {
               <div className="flex items-center justify-center rounded-sm sm:order-last">
                 <BookTableBtn />
               </div>
-              <div className="relative">
-              </div>
+              <div className="relative"></div>
             </div>
           </div>
           <div
