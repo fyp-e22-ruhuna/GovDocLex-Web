@@ -4,13 +4,16 @@ import Hero from "@/section/home/Home";
 import KeyFeatures from "@/section/KeyFeatures";
 import TrackEverything from "@/section/TrackEverything";
 import GovDocLexFeatures from "@/section/SmartExtraction";
-
+import Team from "@/section/home/Team";
 
 const Home = () => {
   return (
     <div>
       <Hero />
-      <About />
+      
+      <section id="about">
+        <About />
+      </section>
 
       <section id="features">
         <KeyFeatures />
@@ -22,9 +25,11 @@ const Home = () => {
         <TrackEverything />
      
       </section>
-  
 
-      
+      <section id="team" className="hidden md:block">
+        <Team />
+      </section>
+
     </div>
   );
 };
