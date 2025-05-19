@@ -23,7 +23,7 @@ const CommonButton = ({ text, link }: CommonButtonProps) => {
 };
 
 export const BookTableBtn = () => (
-  <CommonButton text="Get Started" link="/booking" />
+  <CommonButton text="Get Started" link="/signin" />
 );
 
 export const TryNowBtn = () => <CommonButton text="Try Now" link="" />;
