@@ -5,6 +5,7 @@ import KeyFeatures from "@/section/KeyFeatures";
 import TrackEverything from "@/section/TrackEverything";
 import GovDocLexFeatures from "@/section/SmartExtraction";
 
+
 const Home = () => {
   return (
     <div>
@@ -19,7 +20,11 @@ const Home = () => {
 
       <section id="explore">
         <TrackEverything />
+     
       </section>
+  
+
+      
     </div>
   );
 };
