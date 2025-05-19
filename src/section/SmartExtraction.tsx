@@ -1,6 +1,6 @@
 // src/components/GovDocLexFeatures.jsx
 
-import extractimg from "../assets/images/smartextraction.png"; // replace with actual image path
+import extractimg from "../assets/images/smartextraction.png"; 
 
 const features = [
   {
@@ -26,7 +26,7 @@ const features = [
     icon: (
       <span className="inline-block w-6 h-6 bg-gradient-to-tr from-cyan-400 to-blue-400 rounded-full mr-2" />
     ),
-    bg: "bg-gradient-to-tr from-cyan-900 to-blue-900",
+    bg: "bg-[#101820]",
     border: "border-cyan-400",
   },
   {
@@ -41,7 +41,7 @@ const features = [
     icon: (
       <span className="inline-block w-6 h-6 bg-gradient-to-tr from-blue-400 to-purple-400 rounded-full mr-2" />
     ),
-    bg: "bg-gradient-to-tr from-blue-900 to-purple-900",
+    bg: "bg-[#101820]",
     border: "border-blue-400",
   },
 ];
