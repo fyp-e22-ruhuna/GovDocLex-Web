@@ -14,7 +14,7 @@ const CommonButton = ({ text, link }: CommonButtonProps) => {
 
   return (
     <div
-      className="bg-gradient-to-r from-[#41B7FC] from-65% via-[#44B5FB] via-30% to-[#46F1FA] to-100% border-[2px] rounded-lg md:rounded-3xl font-gilroy text-xs lg:text-base w-[120px] md:w-[175px] flex items-center justify-center px-0 lg:px-4 py-2 font-semibold text-black hover:text-[#FEFFB5] hover:bg-black cursor-pointer text-center"
+      className="bg-gradient-to-r from-[#41B7FC] from-65% via-[#44B5FB] via-30% to-[#46F1FA] to-100% border-[2px] rounded-[20px] md:rounded-3xl font-gilroy text-xs lg:text-base w-[120px] md:w-[175px] flex items-center justify-center px-0 lg:px-4 py-2 font-semibold text-black hover:text-[#FEFFB5] hover:bg-black cursor-pointer text-center"
       onClick={handleClick}
     >
       {text}
@@ -26,6 +26,6 @@ export const BookTableBtn = () => (
   <CommonButton text="Get Started" link="/booking" />
 );
 
-export const ViewAllBtn = () => <CommonButton text="VIEW ALL" link="/menu" />;
+export const TryNowBtn = () => <CommonButton text="Try Now" link="" />;
 
 export default CommonButton;

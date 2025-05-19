@@ -1,6 +1,7 @@
 import CommonLabel from "@/components/common/Label";
 import greenball from "/assets/images/green_ball.png";
 import TeamBox from "@/components/team/TeamBox";
+import { TryNowBtn } from "@/components/common/Button";
 
 function Team() {
   return (
@@ -22,8 +23,11 @@ function Team() {
           expertise with legal domain knowledge
         </p>
       </div>
-      <div className="border flex justify-center">
+      <div className="flex justify-center">
         <TeamBox />
+      </div>
+      <div className="justify-center flex">
+        <TryNowBtn />
       </div>
     </div>
   );

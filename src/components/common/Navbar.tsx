@@ -12,12 +12,6 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get selectedItems from the store
-  //   const selectedItems = useStoreState((state) => state.selectedItems);
-
-  // Count distinct items (length of the selectedItems array)
-  //   const distinctItemCount = selectedItems.length;
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -44,27 +38,16 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // const handleNavClick = (id: SetStateAction<string>) => {
-  //   setActiveNavItem(id);
-  //   navigate(`/${id}`);
-  //   window.scrollTo(0, 0); // Scroll to top after navigation
-  // };
   const handleNavClick = (id: SetStateAction<string>) => {
-  setActiveNavItem(id);
+    setActiveNavItem(id);
 
-  const section = document.getElementById(id as string);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
+    const section = document.getElementById(id as string);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
 
-  setIsMenuOpen(false);
-};
-
-
-  //   const handleCartClick = () => {
-  //     navigate("/cart");
-  //     window.scrollTo(0, 0); // Scroll to top after navigation
-  //   };
+    setIsMenuOpen(false);
+  };
 
   const handleLogoClick = () => {
     navigate("/");
@@ -111,15 +94,6 @@ function Navbar() {
                 <BookTableBtn />
               </div>
               <div className="relative">
-                {/* <FaCartShopping
-                  className="border-2 rounded-lg sm:rounded-xl flex self-center p-1 sm:p-2 text-4xl sm:text-5xl text-[#FEFFB5] cursor-pointer"
-                  onClick={handleCartClick}
-                /> */}
-                {/* {distinctItemCount > 0 && (
-                  <span className="absolute flex items-center justify-center w-4 h-4 font-bold text-white bg-red-500 rounded-full text-[10px] md:text-xs md:h-5 md:w-5 -top-2 -right-2">
-                    {distinctItemCount}
-                  </span>
-                )} */}
               </div>
             </div>
           </div>

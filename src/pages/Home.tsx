@@ -26,7 +26,7 @@ const Home = () => {
      
       </section>
 
-      <section id="team">
+      <section id="team" className="hidden md:block">
         <Team />
       </section>
 
