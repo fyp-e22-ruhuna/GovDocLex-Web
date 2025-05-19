@@ -6,7 +6,7 @@ import shinball from "/assets/images/shiny_buttons.webp";
 
 const Layout = () => {
   return (
-    <div className="flex flex-col min-h-screen relative z-50">
+    <div className="flex flex-col min-h-screen relative z-50 ">
       <img src={bgnav} alt="bgnav" className="hidden sm:block absolute z-0 left-1/3 w-[268px]" />
       <img src={shinball} alt="shinball" className="hidden sm:block absolute z-0 left-1/3 w-[300px]" />
       <Navbar />
