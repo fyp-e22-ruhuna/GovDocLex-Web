@@ -30,7 +30,7 @@ export default function SignInPage() {
         { email, password }
       );
 
-      const { token, user } = response.data;
+      const { token } = response.data;
       localStorage.setItem("token", token);
 
       window.location.href = "/chatbot";
