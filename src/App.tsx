@@ -3,6 +3,7 @@ import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import ChatbotPage from "./pages/ChatbotPage";
 import SignInPage from "./pages/SignInPage";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         </Route>
         <Route path="/chatbot" element={<ChatbotPage />} />
         <Route path="/signin" element={<SignInPage />} />
+        <Route path="/signup" element={<SignUpPage/>}/>
       </Routes>
     </BrowserRouter>
   );
