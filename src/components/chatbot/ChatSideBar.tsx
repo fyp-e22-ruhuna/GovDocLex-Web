@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaSignOutAlt } from "react-icons/fa";
 // import sidebaricon from "../assets/images/sidebaricon.png";
 
 type SidebarProps = {
@@ -30,11 +31,16 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }: SidebarProps) {
       }`}
     >
       <div
-        className={`px-4 py-4 text-lg font-bold tracking-wide border-b border-[#23303a] transition-all duration-300 ${
+        className={`px-4 py-4 text-lg font-bold tracking-wide border-b border-[#23303a] transition-all duration-300 flex justify-between items-center ${
           sidebarOpen ? "opacity-100" : "opacity-0 w-0 p-0 overflow-hidden"
         }`}
       >
         GOVDocLex
+        <button className="">
+          <p>
+            <FaSignOutAlt />
+          </p>
+        </button>
       </div>
       <div className="flex-1 flex flex-col justify-between">
         <div>
@@ -114,13 +120,13 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }: SidebarProps) {
           </div>
         </div>
 
-        <div className="px-4 py-4 flex justify-start">
+        <div className="px-4 py-4 flex flex-col md:flex-row md:justify-between items-center border-t border-[#23303a]">
           <button
             className="w-8 h-8 flex items-center justify-center rounded  transition"
             onClick={toggleSidebar}
             aria-label={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
           >
-            <span className="text-xl">{sidebarOpen ? "⮜" : "⮞"}</span>
+            <span className="text-xl">{sidebarOpen ? "⮞" : "⮜"}</span>
           </button>
         </div>
       </div>
