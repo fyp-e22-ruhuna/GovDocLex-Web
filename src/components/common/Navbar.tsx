@@ -41,7 +41,7 @@ function Navbar() {
  const handleNavClick = (id: SetStateAction<string>) => {
   setActiveNavItem(id);
 
-  const clickedItem = navItems.find((item) => item.id === id);
+  // const clickedItem = navItems.find((item) => item.id === id);
 
   // if (clickedItem?.path && clickedItem.path !== "#") {
   //   navigate(clickedItem.path);
