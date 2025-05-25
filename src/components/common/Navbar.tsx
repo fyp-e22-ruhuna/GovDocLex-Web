@@ -43,16 +43,18 @@ function Navbar() {
 
   const clickedItem = navItems.find((item) => item.id === id);
 
-  if (clickedItem?.path && clickedItem.path !== "#") {
-    navigate(clickedItem.path);
-    setIsMenuOpen(false);
-  } else {
+  // if (clickedItem?.path && clickedItem.path !== "#") {
+  //   navigate(clickedItem.path);
+  //   setIsMenuOpen(false);
+  // } else {
+
+
     const section = document.getElementById(id as string);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
-  }
+  // }
 };
 
   const handleLogoClick = () => {
