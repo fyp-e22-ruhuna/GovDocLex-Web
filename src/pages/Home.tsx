@@ -5,10 +5,11 @@ import KeyFeatures from "@/section/KeyFeatures";
 import TrackEverything from "@/section/TrackEverything";
 import GovDocLexFeatures from "@/section/SmartExtraction";
 import Team from "@/section/home/Team";
+import Chatbotbox from "@/components/chatbotbox";
 
 const Home = () => {
   return (
-    <div>
+    <div className=" relative">
       <Hero />
       
       <section id="about">
@@ -29,6 +30,16 @@ const Home = () => {
       <section id="team" className="hidden md:block">
         <Team />
       </section>
+
+      <div className="absolute">
+
+        <Chatbotbox/>
+
+
+
+
+      </div>
+
 
     </div>
   );

@@ -6,14 +6,15 @@ import { Card, CardContent } from "../ui/Card";
 
 function MainChat() {
   const quickActions = [
+      {
+      label: "Govenment structure",
+      sub: "Explore Government hierarchy",
+    },
     {
       label: "Smart Search",
       sub: "Find notes instantly",
     },
-    {
-      label: "Browse Notes",
-      sub: "Explore subject‑specific notes",
-    },
+  
     {
       label: "Organized Categories",
       sub: "Navigate by folder",

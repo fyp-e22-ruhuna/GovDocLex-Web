@@ -21,7 +21,7 @@ export const teamData: TeamMember[] = [
       profileImage: "/assets/images/profile.webp"
   },
   {
-      name: "Amayuru Amaradinghe",
+      name: "Amayuru Amarasinghe",
       description: "AI Engineer",
       profileImage: "/assets/images/profile.webp"
   },
