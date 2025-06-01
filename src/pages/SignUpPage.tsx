@@ -1,9 +1,13 @@
-import { FaArrowLeft } from "react-icons/fa";
-import { FaRegEyeSlash } from "react-icons/fa";
-import signup from "../assets/images/sign.jpg"; // You can use a different image if needed
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { FaArrowLeft, FaRegEyeSlash } from "react-icons/fa";
+import { GoogleLogin } from "@react-oauth/google";
+import signup from "../assets/images/sign.jpg";
 import footerbackheight from "../assets/images/footerbackheight.png";
 
 export default function SignUpPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-50">
       {/* Left: Sign-up form */}
@@ -37,6 +41,7 @@ export default function SignUpPage() {
                 type="email"
                 placeholder="example@gmail.com"
                 className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-800"
+                autoComplete="off"
               />
             </div>
             <div>
@@ -80,14 +85,28 @@ export default function SignUpPage() {
             <span className="text-gray-400">or</span>
             <div className="flex-1 border-t border-gray-200" />
           </div>
-          <button className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded py-2 hover:bg-gray-100 transition">
-            <img
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
-              alt="Google"
-              className="w-5 h-5"
-            />
-            Continue with Google
-          </button>
+          <GoogleLogin
+            onSuccess={async (credentialResponse) => {
+              try {
+                const response = await axios.post(
+                  `${import.meta.env.VITE_SERVER_API}/google-auth`,
+                  { credential: credentialResponse.credential }
+                );
+                localStorage.setItem('token', response.data.token);
+                navigate('/chatbot');
+              } catch (error) {
+                console.error('Google auth failed', error);
+              }
+            }}
+            onError={() => {
+              console.log('Google sign-up failed');
+            }}
+            useOneTap
+            text="continue_with"
+            shape="rectangular"
+            width="100%"
+            logo_alignment="left"
+          />
         </div>
       </div>
 
