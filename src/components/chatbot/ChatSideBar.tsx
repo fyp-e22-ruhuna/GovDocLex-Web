@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
 // import sidebaricon from "../assets/images/sidebaricon.png";
+import { toast } from "react-toastify";
 
 type SidebarProps = {
   sidebarOpen: boolean;
@@ -23,6 +25,13 @@ const previousItems = [
 export default function Sidebar({ sidebarOpen, toggleSidebar }: SidebarProps) {
   const [showToday, setShowToday] = useState(true);
   const [showPrevious, setShowPrevious] = useState(true);
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    toast.success("Signed out successfully!");
+    navigate("/signin");
+  };
 
   return (
     <div
@@ -36,7 +45,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }: SidebarProps) {
         }`}
       >
         GOVDocLex
-        <button className="">
+        <button className="" onClick={handleSignOut}>
           <p>
             <FaSignOutAlt />
           </p>

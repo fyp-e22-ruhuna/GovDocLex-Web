@@ -1,16 +1,17 @@
 import { useState, FormEvent } from "react";
 import axios from "axios";
-import { FaRegEyeSlash, FaArrowLeft } from "react-icons/fa";
+import { FaRegEyeSlash, FaArrowLeft, FaRegEye } from "react-icons/fa";
+import { GoogleLogin } from "@react-oauth/google";
 import signin from "../assets/images/sign.jpg";
 import footerbackheight from "../assets/images/footerbackheight.png";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 interface LoginResponse {
   token: string;
   user: {
     id: string;
     email: string;
-    // Add more fields if needed
   };
 }
 
@@ -19,6 +20,7 @@ export default function SignInPage() {
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -32,14 +34,15 @@ export default function SignInPage() {
         `${import.meta.env.VITE_SERVER_API}/login`,
         { email, password }
       );
-
+      toast.success('Signed in successfully!');
       const { token } = response.data;
       localStorage.setItem("token", token);
-
-      // window.location.href = "/chatbot";
       navigate("/chatbot");
     } catch (err: any) {
-      setError(err.response?.data?.message || "Login failed. Please try again.");
+      setError(
+        err.response?.data?.message || "Login failed. Please try again."
+      );
+      toast.error('Invalid credentials');
     } finally {
       setLoading(false);
     }
@@ -64,12 +67,13 @@ export default function SignInPage() {
           <h2 className="text-2xl font-bold mb-2">Sign in</h2>
           <p className="mb-6 text-gray-500">
             Don&apos;t have an account?{" "}
-            <a
-              href="/signup"
+            <button
+              type="button"
+              onClick={() => navigate("/signup")}
               className="text-green-800 font-semibold hover:underline"
             >
               Create now
-            </a>
+            </button>
           </p>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -89,7 +93,7 @@ export default function SignInPage() {
               <label className="block text-gray-700 mb-1">Password</label>
               <div className="relative">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="@#*%"
@@ -99,10 +103,13 @@ export default function SignInPage() {
                 <button
                   type="button"
                   className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400"
-                  tabIndex={-1}
-                  aria-label="Show password"
+                  onClick={() => setShowPassword(!showPassword)}
                 >
-                  <FaRegEyeSlash className="w-5 h-5" />
+                  {showPassword ? (
+                    <FaRegEye className="w-5 h-5" />
+                  ) : (
+                    <FaRegEyeSlash className="w-5 h-5" />
+                  )}
                 </button>
               </div>
             </div>
@@ -117,7 +124,9 @@ export default function SignInPage() {
               </a>
             </div>
 
-            {error && <div className="text-red-600 text-sm font-medium">{error}</div>}
+            {error && (
+              <div className="text-red-600 text-sm font-medium">{error}</div>
+            )}
 
             <button
               type="submit"
@@ -139,14 +148,30 @@ export default function SignInPage() {
           </div>
 
           <div className="space-y-3">
-            <button className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded py-2 hover:bg-gray-100 transition">
-              <img
-                src="https://www.svgrepo.com/show/475656/google-color.svg"
-                alt="Google"
-                className="w-5 h-5"
-              />
-              Continue with Google
-            </button>
+            <GoogleLogin
+              onSuccess={async (credentialResponse) => {
+                console.log(credentialResponse.credential);
+                try {
+                  const response = await axios.post(
+                    `${import.meta.env.VITE_SERVER_API}/google-auth`,
+                    { credential: credentialResponse.credential }
+                  );
+                  localStorage.setItem("token", response.data.token);
+                  navigate("/chatbot");
+                } catch (err: any) {
+                  setError("Google login failed. Please try again.");
+                }
+              }}
+              onError={() => {
+                setError("Google login failed. Please try again.");
+              }}
+              useOneTap
+              size="large"
+              shape="rectangular"
+              text="continue_with"
+              width={350}
+              logo_alignment="left"
+            />
           </div>
         </div>
       </div>
