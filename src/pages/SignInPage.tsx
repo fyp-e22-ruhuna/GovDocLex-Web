@@ -3,6 +3,7 @@ import axios from "axios";
 import { FaRegEyeSlash, FaArrowLeft } from "react-icons/fa";
 import signin from "../assets/images/sign.jpg";
 import footerbackheight from "../assets/images/footerbackheight.png";
+import { useNavigate } from "react-router-dom";
 
 interface LoginResponse {
   token: string;
@@ -19,6 +20,8 @@ export default function SignInPage() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -33,7 +36,8 @@ export default function SignInPage() {
       const { token } = response.data;
       localStorage.setItem("token", token);
 
-      window.location.href = "/chatbot";
+      // window.location.href = "/chatbot";
+      navigate("/chatbot");
     } catch (err: any) {
       setError(err.response?.data?.message || "Login failed. Please try again.");
     } finally {
